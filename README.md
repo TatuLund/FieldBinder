@@ -1,3 +1,6 @@
+[![Published on Vaadin  Directory](https://img.shields.io/badge/Vaadin%20Directory-published-00b4f0.svg)](https://vaadin.com/directory/component/fieldbinder)
+[![Stars on Vaadin Directory](https://img.shields.io/vaadin-directory/star/fieldbinder.svg)](https://vaadin.com/directory/component/fieldbinder)
+
 # FieldBinder Add-on for Vaadin 8
 
 FieldBinder is a little sibling of Binder for special case of single
