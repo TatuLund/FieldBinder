@@ -1640,4 +1640,27 @@ public class FieldBinder<TARGET> implements Serializable {
         return status;
     }
     
+    /**
+     * Creates a new binding for the given field. The returned builder may be
+     * further configured before invoking
+     * {@link FieldBindingBuilder#bind(Object)} which completes the binding.
+     * Until {@code Binding.bind} is called, the binding has no effect.
+     * <p>
+     * <strong>Note:</strong> Not all {@link HasValue} implementations support
+     * passing {@code null} as the value. For these the Binder will
+     * automatically change {@code null} to a null representation provided by
+     * {@link HasValue#getEmptyValue()}. This conversion is one-way only, if you
+     * want to have a two-way mapping back to {@code null}, use
+     * {@link FieldBindingBuilder#withNullRepresentation(Object)}.
+     *
+     * @param <FIELDVALUE>
+     *            the value type of the field
+     * @param field
+     *            the field to be bound, not null
+     * @return the new binding
+     */
+    public static <T> FieldBindingBuilder<T> of(HasValue<T> field) {
+        return new FieldBinder<>().forField(field);
+    }
+
 }
