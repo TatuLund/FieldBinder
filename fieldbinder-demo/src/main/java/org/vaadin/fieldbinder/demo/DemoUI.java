@@ -86,9 +86,8 @@ public class DemoUI extends UI
 
         // Text field with Double value Converter and Validator
         // Demoing how to detect if value is valid, showing customized error using status handler
-        FieldBinder<Double> doubleFieldBinder = new FieldBinder<>();
         TextField doubleField = new TextField("Input double");       
-        doubleFieldBinder.forField(doubleField)
+        FieldBinder.of(doubleField)
         		.withConverter(new StringToDoubleConverter("This is not a number"))
         		.withValidator(new DoubleRangeValidator("Give a number between -10 and 10",-10.0d,10.0d))
         		.withValidationStatusHandler(status -> { 
@@ -101,7 +100,6 @@ public class DemoUI extends UI
         // Text field with Date value Validator against Field type and Converter to model type
         // Demoing how to show validation status in custom label
         HorizontalLayout dateLayout = new HorizontalLayout();
-        FieldBinder<Date> dateFieldBinder = new FieldBinder<>();
         DateField dateField = new DateField("Select date");
         Label dateLabel = new Label();
         dateLabel.setContentMode(ContentMode.HTML);
@@ -109,11 +107,12 @@ public class DemoUI extends UI
         dateLayout.setComponentAlignment(dateLabel, Alignment.MIDDLE_CENTER);
         dateLayout.setComponentAlignment(dateField, Alignment.MIDDLE_CENTER);
         
-        dateFieldBinder.forField(dateField)
-				.withValidator(new DateRangeValidator("<B>Date cant be from the past</B>",LocalDate.now(),LocalDate.MAX))
-        		.withConverter(new LocalDateToDateConverter())
-        		.withStatusLabel(dateLabel)
-        		.bind(dateValue);
+        FieldBinder.of(dateField)
+                .withValidator(new DateRangeValidator(
+                        "<B>Date cant be from the past</B>", LocalDate.now(),
+                        LocalDate.MAX))
+                .withConverter(new LocalDateToDateConverter())
+                .withStatusLabel(dateLabel).bind(dateValue);
         
         // Show it in the middle of the screen
         VerticalLayout layout = new VerticalLayout();
