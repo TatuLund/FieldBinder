@@ -92,4 +92,4 @@ FieldBinder is written by Tatu Lund
 
 Add-on has JavaDocs
 
-FieldBinder JavaDoc is available online at https://vaadin.com/api/org.vaadin/fieldbinder/0.1.0/org/vaadin/fieldbinder/package-summary.html
+FieldBinder JavaDoc is available online at https://vaadin.com/api/org.vaadin/fieldbinder/0.2.0/org/vaadin/fieldbinder/package-summary.html
