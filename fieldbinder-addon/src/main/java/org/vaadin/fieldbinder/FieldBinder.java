@@ -1653,14 +1653,15 @@ public class FieldBinder<TARGET> implements Serializable {
      * want to have a two-way mapping back to {@code null}, use
      * {@link FieldBindingBuilder#withNullRepresentation(Object)}.
      *
-     * @param <FIELDVALUE>
+     * @param <TARGET>
      *            the value type of the field
      * @param field
      *            the field to be bound, not null
      * @return the new binding
      */
-    public static <T> FieldBindingBuilder<T> of(HasValue<T> field) {
+    public static <TARGET> FieldBindingBuilder<TARGET> of(HasValue<TARGET> field) {
         return new FieldBinder<>().forField(field);
+        
     }
 
 }

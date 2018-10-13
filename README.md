@@ -20,7 +20,7 @@ is not needed.
 
 ### Download release
 
-Official releases of this add-on are available at Vaadin Directory. For Maven instructions, download and reviews, go to http://vaadin.com/addon/fieldbinder
+Official releases of this add-on are available at Vaadin Directory. For Maven instructions, download and reviews, go to https://vaadin.com/directory/component/fieldbinder
 
 ## Building and running demo
 
@@ -55,6 +55,9 @@ If you have a JRebel license, it makes on the fly code changes faster. Just add 
 To debug project and make code modifications on the fly in the server-side, right-click the fieldbinder-demo project and choose Debug As > Debug on Server. Navigate to http://localhost:8080/fieldbinder-demo/ to see the application.
 
 ## Release notes
+
+### Version 0.2.0
+- Added FieldBinder.of(..) short hand.
 
 ### Version 0.1.0
 - Initial release
